@@ -10,9 +10,6 @@ var hour15 = document.querySelector('.hour-15');
 var hour16 = document.querySelector('.hour-16');
 var hour17 = document.querySelector('.hour-17');
 
-var saveButton = document.querySelector('.saveBtn');
-
-var timeDiv = document.querySelector('.time-div');
 var timeArray;
 
 var nineSaveButton = document.querySelector('.nineAM');
@@ -54,6 +51,7 @@ var currentHourFunc = function () {
 };
 
 currentHourFunc();
+
 var time = moment().format("MMMM Do, YYYY h:mm:ss a");
 currentDay.textContent = time;
 
@@ -61,7 +59,6 @@ var timerInterval = setInterval(function () {
     time = moment().format("MMMM Do, YYYY h:mm:ss a");
     currentDay.textContent = time;
     currentHourFunc();
-    // console.log(currentHour);
 }, 1000);
 
 nineSaveButton.addEventListener('click', function () {
