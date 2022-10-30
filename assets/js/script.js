@@ -9,11 +9,25 @@ var hour14 = document.querySelector('.hour-14');
 var hour15 = document.querySelector('.hour-15');
 var hour16 = document.querySelector('.hour-16');
 var hour17 = document.querySelector('.hour-17');
-var saveButton = document.querySelector('.saveBtn');
-var timeDiv = document.querySelector('.time-div');
 
-var hourArray = [[hour9, 09], [hour10, 10], [hour11, 11], [hour12, 12], [hour13, 13], [hour14, 14], [hour15, 15],
-[hour16, 16], [hour17, 17]];
+var saveButton = document.querySelector('.saveBtn');
+
+var timeDiv = document.querySelector('.time-div');
+var timeArray;
+
+var nineSaveButton = document.querySelector('.nineAM');
+var tenSaveButton = document.querySelector('.tenAM');
+var elevSaveButton = document.querySelector('.elevenAM');
+var twelveSaveButton = document.querySelector('.twelvePM');
+var oneSaveButton = document.querySelector('.onePM');
+var twoSaveButton = document.querySelector('.twoPM');
+var threeSaveButton = document.querySelector('.threePM');
+var fourSaveButton = document.querySelector('.fourPM');
+var fiveSaveButton = document.querySelector('.fivePM');
+
+var hourArray = [[hour9, 09, 'hour-09'], [hour10, 10, 'hour-10'], [hour11, 11, 'hour-11'], [hour12, 12, 'hour-12'], [hour13, 13, 'hour-13'], [hour14, 14, 'hour-14'], [hour15, 15, 'hour-15'],
+[hour16, 16, 'hour-16'], [hour17, 17, 'hour-17']];
+
 var currentHour;
 
 var currentHourFunc = function () {
@@ -22,27 +36,91 @@ var currentHourFunc = function () {
         if (currentHour == hourArray[i][1]) {
             hourArray[i][0].classList.add('present');
             // console.log(hourArray[i][1])
-            // hourArray[i][0].classList.remove('past');
-            // hourArray[i][0].classList.remove('future');
+            hourArray[i][0].classList.remove('past');
+            hourArray[i][0].classList.remove('future');
         }
         else if (currentHour > hourArray[i][1]) {
             hourArray[i][0].classList.add('past');
-            // hourArray[i][0].classList.remove('present');
-            // hourArray[i][0].classList.remove('future');
+            hourArray[i][0].classList.remove('present');
+            hourArray[i][0].classList.remove('future');
 
         }
         else if (currentHour < hourArray[i][1]) {
             hourArray[i][0].classList.add('future');
-            // hourArray[i][0].classList.remove('present');
-            // hourArray[i][0].classList.remove('past');
+            hourArray[i][0].classList.remove('present');
+            hourArray[i][0].classList.remove('past');
         }
     }
 };
 
+currentHourFunc();
+var time = moment().format("MMMM Do, YYYY h:mm:ss a");
+currentDay.textContent = time;
+
 var timerInterval = setInterval(function () {
-    var time = moment().format("MMMM Do, YYYY h:mm:ss a");
+    time = moment().format("MMMM Do, YYYY h:mm:ss a");
     currentDay.textContent = time;
     currentHourFunc();
     // console.log(currentHour);
 }, 1000);
 
+nineSaveButton.addEventListener('click', function () {
+    var input = hour9.value;
+    var inputArray = JSON.stringify(['hour-09', input]);
+    localStorage.setItem('hour-09', inputArray);
+});
+
+tenSaveButton.addEventListener('click', function () {
+    var input = hour10.value;
+    var inputArray = JSON.stringify(['hour-10', input]);
+    localStorage.setItem('hour-10', inputArray);
+});
+
+elevSaveButton.addEventListener('click', function () {
+    var input = hour11.value;
+    var inputArray = JSON.stringify(['hour-11', input]);
+    localStorage.setItem('hour-11', inputArray);
+});
+
+twelveSaveButton.addEventListener('click', function () {
+    var input = hour12.value;
+    var inputArray = JSON.stringify(['hour-12', input]);
+    localStorage.setItem('hour-12', inputArray);
+});
+
+oneSaveButton.addEventListener('click', function () {
+    var input = hour13.value;
+    var inputArray = JSON.stringify(['hour-13', input]);
+    localStorage.setItem('hour-13', inputArray);
+});
+
+twoSaveButton.addEventListener('click', function () {
+    var input = hour14.value;
+    var inputArray = JSON.stringify(['hour-14', input]);
+    localStorage.setItem('hour-14', inputArray);
+});
+
+threeSaveButton.addEventListener('click', function () {
+    var input = hour15.value;
+    var inputArray = JSON.stringify(['hour-15', input]);
+    localStorage.setItem('hour-15', inputArray);
+});
+
+fourSaveButton.addEventListener('click', function () {
+    var input = hour16.value;
+    var inputArray = JSON.stringify(['hour-16', input]);
+    localStorage.setItem('hour-16', inputArray);
+});
+
+fiveSaveButton.addEventListener('click', function () {
+    var input = hour17.value;
+    var inputArray = JSON.stringify(['hour-17', input]);
+    localStorage.setItem('hour-17', inputArray);
+});
+
+for (i = 0; i < hourArray.length; i++) {
+    timeArray = JSON.parse(localStorage.getItem(hourArray[i][2])) ?? '';
+    console.log(hourArray[i][2]);
+    console.log(timeArray);
+    hourArray[i][0].textContent = timeArray[1];
+}
