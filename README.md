@@ -18,9 +18,10 @@ N/A
 
 4. Stored input values persist on the page when it is refreshed
 
-5. The background color of each time block changes depending on the current time:
+5. The background color of each time block changes depending on the current time.
 
-![Color-Coded Time Blocks](assets/images/backgroundColor.png)
+![Application Screenshot](assets/images/application.png)
+
 
 ## Credits
 
