@@ -4,6 +4,7 @@ body {
   line-height: 1;
 }
 
+/* text input area in time block */
 textarea {
   background: transparent;
   border: none;
@@ -16,7 +17,7 @@ textarea {
   margin-bottom: .7rem;
 }
 
-
+/* header area with title and current time */
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -30,6 +31,7 @@ textarea {
 
 }
 
+/* time block div class */
 .time-block {
   text-align: left;
   border-radius: 15px;
@@ -48,24 +50,28 @@ textarea {
   border-top: 1px dashed #000000;
 }
 
+/* background color for past time blocks */
 .past {
   background-color: #d3d3d3;
   color: black;
   text-align: left;
 }
 
+/* background color for present time block */
 .present {
   background-color: #ff6961;
   color: black;
   text-align: left;
 }
 
+/* background color for future time blocks */
 .future {
   background-color: #77dd77;
   color: black;
   text-align: left;
 }
 
+/* save button class */
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;

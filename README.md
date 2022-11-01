@@ -10,19 +10,13 @@ N/A
 
 ## Usage
 
-1. Access the application at the provided URL:
+1. Access the application at the provided URL: https://agarfar.github.io/work-scheduler/
 
-2. Click on a text field to add personalized notes:
-
-![Text Field](assets/images/textArea.png)
+2. Click on a text field to add personalized notes
 
 3. Click the save button at the end of each input field to store current text to local storage.
 
-![Save Button](assets/images/saveButton.png)
-
-4. Stored input values persist on the page when it is refreshed:
-
-![Saved Events](assets/images/localStorage.png)
+4. Stored input values persist on the page when it is refreshed
 
 5. The background color of each time block changes depending on the current time:
 
