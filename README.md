@@ -22,7 +22,6 @@ N/A
 
 ![Application Screenshot](assets/images/application.png)
 
-
 ## Credits
 
 N/A
